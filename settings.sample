@@ -1,0 +1,7 @@
+[ElasticSearch]
+
+user=john_smith
+password=aDifficultOne
+host=my.es.host
+port=80
+path=es_path_if_any
