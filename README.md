@@ -37,3 +37,4 @@ It will start the server and open a new tab within your current browser session.
 * elasticsearch
 * elasticsearch_dsl
 * pandas
+* plotly
