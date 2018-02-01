@@ -1,0 +1,117 @@
+{
+    "dashboard": {
+        "id": "Marvel-Enrich",
+        "value": {
+            "description": "",
+            "hits": 0,
+            "kibanaSavedObjectMeta": {
+                "searchSourceJSON": "{\"filter\":[{\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}}}]}"
+            },
+            "optionsJSON": "{\"darkTheme\":false}",
+            "panelsJSON": "[{\"col\":4,\"id\":\"marvel_authors_cloud\",\"panelIndex\":1,\"row\":7,\"size_x\":4,\"size_y\":5,\"type\":\"visualization\"},{\"col\":1,\"id\":\"marvel_authors_colors\",\"panelIndex\":2,\"row\":12,\"size_x\":7,\"size_y\":10,\"type\":\"visualization\"},{\"col\":1,\"id\":\"marvel_authors_comics_colors\",\"panelIndex\":3,\"row\":1,\"size_x\":7,\"size_y\":6,\"type\":\"visualization\"},{\"col\":1,\"id\":\"marvel_enrich_authors_table\",\"panelIndex\":5,\"row\":7,\"size_x\":3,\"size_y\":5,\"type\":\"visualization\"},{\"col\":8,\"id\":\"marvel_role_pie\",\"panelIndex\":6,\"row\":1,\"size_x\":5,\"size_y\":2,\"type\":\"visualization\"},{\"col\":8,\"id\":\"marvel_comic_table\",\"panelIndex\":7,\"row\":3,\"size_x\":5,\"size_y\":19,\"type\":\"visualization\"}]",
+            "refreshInterval": {
+                "display": "Off",
+                "pause": false,
+                "value": 0
+            },
+            "timeFrom": "now-15y",
+            "timeRestore": true,
+            "timeTo": "now",
+            "title": "Marvel Enrich",
+            "uiStateJSON": "{\"P-5\":{\"vis\":{\"params\":{\"sort\":{\"columnIndex\":null,\"direction\":null}}}},\"P-7\":{\"vis\":{\"params\":{\"sort\":{\"columnIndex\":null,\"direction\":null}}}}}",
+            "version": 1
+        }
+    },
+    "index_patterns": [
+        {
+            "id": "comics-raw_enrich",
+            "value": {
+                "fieldFormatMap": "{\"url_thumbnail\":{\"id\":\"url\",\"params\":{\"type\":\"img\",\"urlTemplate\":\"{{rawValue}}/portrait_incredible.jpg\"}}}",
+                "fields": "[{\"name\":\"urls.url\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"indexed\":true,\"analyzed\":false,\"doc_values\":true,\"searchable\":true,\"aggregatable\":true},{\"name\":\"role\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"indexed\":true,\"analyzed\":false,\"doc_values\":true,\"searchable\":true,\"aggregatable\":true},{\"name\":\"metadata__gelk_backend_name\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"indexed\":true,\"analyzed\":false,\"doc_values\":true,\"searchable\":true,\"aggregatable\":true},{\"name\":\"origin\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"indexed\":true,\"analyzed\":false,\"doc_values\":true,\"searchable\":true,\"aggregatable\":true},{\"name\":\"title\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"indexed\":true,\"analyzed\":false,\"doc_values\":true,\"searchable\":true,\"aggregatable\":true},{\"name\":\"uuid\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"indexed\":true,\"analyzed\":false,\"doc_values\":true,\"searchable\":true,\"aggregatable\":true},{\"name\":\"metadata__enriched_on\",\"type\":\"date\",\"count\":0,\"scripted\":false,\"indexed\":true,\"analyzed\":false,\"doc_values\":true,\"searchable\":true,\"aggregatable\":true},{\"name\":\"modified\",\"type\":\"date\",\"count\":0,\"scripted\":false,\"indexed\":true,\"analyzed\":false,\"doc_values\":true,\"searchable\":true,\"aggregatable\":true},{\"name\":\"tag\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"indexed\":true,\"analyzed\":false,\"doc_values\":true,\"searchable\":true,\"aggregatable\":true},{\"name\":\"id\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"indexed\":true,\"analyzed\":false,\"doc_values\":true,\"searchable\":true,\"aggregatable\":true},{\"name\":\"comic_id\",\"type\":\"number\",\"count\":1,\"scripted\":false,\"indexed\":true,\"analyzed\":false,\"doc_values\":true,\"searchable\":true,\"aggregatable\":true},{\"name\":\"resourceURI\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"indexed\":true,\"analyzed\":false,\"doc_values\":true,\"searchable\":true,\"aggregatable\":true},{\"name\":\"urls.type\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"indexed\":true,\"analyzed\":false,\"doc_values\":true,\"searchable\":true,\"aggregatable\":true},{\"name\":\"comic_title\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"indexed\":true,\"analyzed\":false,\"doc_values\":true,\"searchable\":true,\"aggregatable\":true},{\"name\":\"name\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"indexed\":true,\"analyzed\":false,\"doc_values\":true,\"searchable\":true,\"aggregatable\":true},{\"name\":\"_source\",\"type\":\"_source\",\"count\":0,\"scripted\":false,\"indexed\":false,\"analyzed\":false,\"doc_values\":false,\"searchable\":false,\"aggregatable\":false},{\"name\":\"metadata__gelk_version\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"indexed\":true,\"analyzed\":false,\"doc_values\":true,\"searchable\":true,\"aggregatable\":true},{\"name\":\"_id\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"indexed\":false,\"analyzed\":false,\"doc_values\":false,\"searchable\":false,\"aggregatable\":false},{\"name\":\"_type\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"indexed\":false,\"analyzed\":false,\"doc_values\":false,\"searchable\":true,\"aggregatable\":true},{\"name\":\"_index\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"indexed\":false,\"analyzed\":false,\"doc_values\":false,\"searchable\":false,\"aggregatable\":false},{\"name\":\"_score\",\"type\":\"number\",\"count\":0,\"scripted\":false,\"indexed\":false,\"analyzed\":false,\"doc_values\":false,\"searchable\":false,\"aggregatable\":false},{\"name\":\"url_thumbnail\",\"type\":\"string\",\"count\":1,\"scripted\":false,\"indexed\":true,\"analyzed\":false,\"doc_values\":true,\"searchable\":true,\"aggregatable\":true}]",
+                "timeFieldName": "modified",
+                "title": "comics-raw_enrich"
+            }
+        }
+    ],
+    "searches": [],
+    "visualizations": [
+        {
+            "id": "marvel_authors_cloud",
+            "value": {
+                "description": "",
+                "kibanaSavedObjectMeta": {
+                    "searchSourceJSON": "{\"index\":\"comics-raw_enrich\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[{\"$state\":{\"store\":\"appState\"},\"meta\":{\"alias\":null,\"disabled\":true,\"index\":\"comics-raw_enrich\",\"key\":\"name\",\"negate\":false,\"value\":\"Skottie Young\"},\"query\":{\"match\":{\"name\":{\"query\":\"Skottie Young\",\"type\":\"phrase\"}}}}]}"
+                },
+                "title": "marvel_authors_cloud",
+                "uiStateJSON": "{}",
+                "version": 1,
+                "visState": "{\"title\":\"marvel_authors_cloud\",\"type\":\"tagcloud\",\"params\":{\"scale\":\"linear\",\"orientation\":\"single\",\"minFontSize\":18,\"maxFontSize\":72},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"name\",\"size\":20,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}"
+            }
+        },
+        {
+            "id": "marvel_authors_colors",
+            "value": {
+                "description": "",
+                "kibanaSavedObjectMeta": {
+                    "searchSourceJSON": "{\"index\":\"comics-raw_enrich\",\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}},\"filter\":[{\"$state\":{\"store\":\"globalState\"},\"meta\":{\"alias\":null,\"disabled\":true,\"index\":\"comics-raw_enrich\",\"key\":\"name\",\"negate\":false,\"value\":\"Skottie Young\"},\"query\":{\"match\":{\"name\":{\"query\":\"Skottie Young\",\"type\":\"phrase\"}}}}]}"
+                },
+                "title": "marvel_authors_colors",
+                "uiStateJSON": "{\"spy\":{\"mode\":{\"name\":null,\"fill\":false}}}",
+                "version": 1,
+                "visState": "{\"title\":\"marvel_authors_colors\",\"type\":\"network\",\"params\":{\"canvasBackgroundColor\":\"#FFFFFF\",\"displayArrow\":false,\"firstNodeColor\":\"#FD7BC4\",\"gravitationalConstant\":-35000,\"labelColor\":\"#000000\",\"maxCutMetricSizeEdge\":5000,\"maxCutMetricSizeNode\":5000,\"maxEdgeSize\":8,\"maxNodeSize\":80,\"minCutMetricSizeNode\":0,\"minEdgeSize\":0.1,\"minNodeSize\":8,\"nodePhysics\":true,\"posArrow\":\"to\",\"scaleArrow\":1,\"secondNodeColor\":\"#00d1ff\",\"shapeArrow\":\"arrow\",\"shapeFirstNode\":\"dot\",\"shapeSecondNode\":\"box\",\"showColorLegend\":true,\"showLabels\":true,\"showPopup\":true,\"smoothType\":\"continuous\",\"springConstant\":0.001},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"size_node\",\"params\":{}},{\"id\":\"3\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"first\",\"params\":{\"field\":\"name\",\"size\":25,\"order\":\"desc\",\"orderBy\":\"1\"}},{\"id\":\"4\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"second\",\"params\":{\"field\":\"comic_id\",\"size\":5000,\"order\":\"desc\",\"orderBy\":\"1\"}},{\"id\":\"5\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"colornode\",\"params\":{\"field\":\"role\",\"size\":1,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}"
+            }
+        },
+        {
+            "id": "marvel_authors_comics_colors",
+            "value": {
+                "description": "",
+                "kibanaSavedObjectMeta": {
+                    "searchSourceJSON": "{\"index\":\"comics-raw_enrich\",\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}},\"filter\":[{\"$state\":{\"store\":\"globalState\"},\"meta\":{\"alias\":null,\"disabled\":true,\"index\":\"comics-raw_enrich\",\"key\":\"name\",\"negate\":false,\"value\":\"Skottie Young\"},\"query\":{\"match\":{\"name\":{\"query\":\"Skottie Young\",\"type\":\"phrase\"}}}}]}"
+                },
+                "title": "marvel_authors_comics_colors",
+                "uiStateJSON": "{\"spy\":{\"mode\":{\"name\":null,\"fill\":false}}}",
+                "version": 1,
+                "visState": "{\"title\":\"marvel_authors_comics_colors\",\"type\":\"network\",\"params\":{\"canvasBackgroundColor\":\"#FFFFFF\",\"displayArrow\":false,\"firstNodeColor\":\"#FD7BC4\",\"gravitationalConstant\":-35000,\"labelColor\":\"#000000\",\"maxCutMetricSizeEdge\":5000,\"maxCutMetricSizeNode\":5000,\"maxEdgeSize\":8,\"maxNodeSize\":80,\"minCutMetricSizeNode\":0,\"minEdgeSize\":0.1,\"minNodeSize\":8,\"nodePhysics\":true,\"posArrow\":\"to\",\"scaleArrow\":1,\"secondNodeColor\":\"#00d1ff\",\"shapeArrow\":\"arrow\",\"shapeFirstNode\":\"dot\",\"shapeSecondNode\":\"box\",\"showColorLegend\":true,\"showLabels\":true,\"showPopup\":true,\"smoothType\":\"continuous\",\"springConstant\":0.001},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"size_node\",\"params\":{}},{\"id\":\"3\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"first\",\"params\":{\"field\":\"name\",\"size\":25,\"order\":\"desc\",\"orderBy\":\"1\"}},{\"id\":\"6\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"first\",\"params\":{\"field\":\"title\",\"size\":1000,\"order\":\"desc\",\"orderBy\":\"1\"}},{\"id\":\"5\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"colornode\",\"params\":{\"field\":\"role\",\"size\":1,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}"
+            }
+        },
+        {
+            "id": "marvel_enrich_authors_table",
+            "value": {
+                "description": "",
+                "kibanaSavedObjectMeta": {
+                    "searchSourceJSON": "{\"index\":\"comics-raw_enrich\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[{\"$state\":{\"store\":\"globalState\"},\"meta\":{\"alias\":null,\"disabled\":true,\"index\":\"comics-raw_enrich\",\"key\":\"name\",\"negate\":false,\"value\":\"Skottie Young\"},\"query\":{\"match\":{\"name\":{\"query\":\"Skottie Young\",\"type\":\"phrase\"}}}}]}"
+                },
+                "title": "marvel_enrich_authors_table",
+                "uiStateJSON": "{\"vis\":{\"params\":{\"sort\":{\"columnIndex\":null,\"direction\":null}}}}",
+                "version": 1,
+                "visState": "{\"title\":\"marvel_enrich_authors_table\",\"type\":\"table\",\"params\":{\"perPage\":10,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false,\"sort\":{\"columnIndex\":null,\"direction\":null},\"showTotal\":false,\"totalFunc\":\"sum\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"# Collaborations\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"name\",\"size\":1000,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Creator\"}}],\"listeners\":{}}"
+            }
+        },
+        {
+            "id": "marvel_role_pie",
+            "value": {
+                "description": "",
+                "kibanaSavedObjectMeta": {
+                    "searchSourceJSON": "{\"index\":\"comics-raw_enrich\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[{\"$state\":{\"store\":\"globalState\"},\"meta\":{\"alias\":null,\"disabled\":true,\"index\":\"comics-raw_enrich\",\"key\":\"name\",\"negate\":false,\"value\":\"Skottie Young\"},\"query\":{\"match\":{\"name\":{\"query\":\"Skottie Young\",\"type\":\"phrase\"}}}}]}"
+                },
+                "title": "marvel_role_pie",
+                "uiStateJSON": "{}",
+                "version": 1,
+                "visState": "{\"title\":\"marvel_role_pie\",\"type\":\"pie\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"isDonut\":true},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"role\",\"size\":50,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Role\"}}],\"listeners\":{}}"
+            }
+        },
+        {
+            "id": "marvel_comic_table",
+            "value": {
+                "description": "",
+                "kibanaSavedObjectMeta": {
+                    "searchSourceJSON": "{\"index\":\"comics-raw_enrich\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[{\"$state\":{\"store\":\"globalState\"},\"meta\":{\"alias\":null,\"disabled\":true,\"index\":\"comics-raw_enrich\",\"key\":\"name\",\"negate\":false,\"value\":\"Skottie Young\"},\"query\":{\"match\":{\"name\":{\"query\":\"Skottie Young\",\"type\":\"phrase\"}}}}]}"
+                },
+                "title": "marvel_comic_table",
+                "uiStateJSON": "{\"vis\":{\"params\":{\"sort\":{\"columnIndex\":null,\"direction\":null}}}}",
+                "version": 1,
+                "visState": "{\"title\":\"marvel_comic_table\",\"type\":\"table\",\"params\":{\"perPage\":5,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false,\"sort\":{\"columnIndex\":null,\"direction\":null},\"showTotal\":false,\"totalFunc\":\"sum\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"# Creators\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"title\",\"size\":1000,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Title\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"url_thumbnail\",\"size\":1,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Cover\"}}],\"listeners\":{}}"
+            }
+        }
+    ]
+}
