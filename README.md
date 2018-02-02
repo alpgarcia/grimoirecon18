@@ -33,7 +33,7 @@ jupyter notebook
 It will start the server and open a new tab within your current browser session.
 
 # Required libraries
-* cerifi
+* certifi
 * elasticsearch
 * elasticsearch_dsl
 * pandas
